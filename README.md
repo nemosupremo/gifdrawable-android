@@ -25,6 +25,9 @@ Once done, you should be set up to use the class with your project.
 ## Example
 See the `com.droidtools.example.MainActivity` for an example of using the project.
 
+## Supported Devices
+Since the `<android/asset_manager.h>` is only supported in API Level 9, `gifFromAsset` only supports API Level 9 (Gingerbread). However if you remove those calls, then API Level 5 (Eclair) will be supported.
+
 ## Bugs
 
 1. Large gifs can crash
