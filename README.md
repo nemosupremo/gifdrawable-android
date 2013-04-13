@@ -29,7 +29,7 @@ See the `com.droidtools.example.MainActivity` for an example of using the projec
 
 1. Large gifs can crash
 2. Some dispose methods are unsupported.
-3. setLevel always returns true even if the gif did not need the change frames.
+3. `com.droidtools.android.graphics.GifDrawable.setLevel()` always returns true even if the gif did not need the change frames.
 
 ## License
 Copyright (c) 2013 nimiwaribokoj@gmail.com
