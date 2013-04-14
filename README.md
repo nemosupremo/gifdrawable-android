@@ -31,7 +31,7 @@ Gifs can be loaded by 2 ways.
 If you need to load a Gif from a URL, then download the gif to the local filesystem, then load it into `GifDrawable`.
 
 ## Animating GIFs
-The frames of a GifDrawable can be changed with the `com.droidtools.android.graphics.GifDrawable.setLevel(int level)` function. <http://developer.android.com/reference/android/graphics/drawable/Drawable.html#setLevel(int)>. Each 'tick' is 1/100th of a second. (So if a Gif has a delay of 10ms, setLevel(0) and setLevel(1) will be 2 different frames.)
+The frames of a GifDrawable can be changed with the `com.droidtools.android.graphics.GifDrawable.setLevel(int level)` function (<http://developer.android.com/reference/android/graphics/drawable/Drawable.html#setLevel(int)>). Each 'tick' is 1/100th of a second. (So if a Gif has a delay of 10ms, setLevel(0) and setLevel(1) will be 2 different frames.)
 
 The easiest way to animate a GIF is to simply pass `.setLevel((int)(System.currentTimeMillis()/10 % 10000))` to `GifDrawable` in some sort of `onDraw` loop or `Handler` message.
 
