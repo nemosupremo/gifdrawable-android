@@ -56,6 +56,8 @@ public class MainActivity extends Activity implements OnClickListener {
         ((Button) findViewById(R.id.button2)).setOnClickListener(this);
         ((Button) findViewById(R.id.button3)).setOnClickListener(this);
         ((Button) findViewById(R.id.button4)).setOnClickListener(this);
+        ((Button) findViewById(R.id.button5)).setOnClickListener(this);
+        ((Button) findViewById(R.id.button6)).setOnClickListener(this);
         
         
         /* You should always load images in the background */

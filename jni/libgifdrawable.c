@@ -100,7 +100,6 @@ void drawFrame(GifFileType* gif, AndroidBitmapInfo*  info, int* pixels, int fram
 
   width = gif->SWidth;
   height = gif->SHeight;
-  bg = &gif->SColorMap[gif->SBackGroundColor];
 
   frame = &(gif->SavedImages[frame_no]);
   frameInfo = &(frame->ImageDesc);
@@ -109,6 +108,8 @@ void drawFrame(GifFileType* gif, AndroidBitmapInfo*  info, int* pixels, int fram
     } else {
       colorMap = gif->SColorMap;
   }
+
+  bg = &colorMap->Colors[gif->SBackGroundColor];
 
   for (j=0; j<frame->ExtensionBlockCount; j++) {
     if (frame->ExtensionBlocks[j].Function == GRAPHICS_EXT_FUNC_CODE) {
@@ -147,7 +148,7 @@ void drawFrame(GifFileType* gif, AndroidBitmapInfo*  info, int* pixels, int fram
         }
 
         color = (ext && frame->RasterBits[loc] == trans_index(ext)) ? bg : &colorMap->Colors[frame->RasterBits[loc]];
-        if (color && color->Red && color->Green && color->Blue)
+        if (color)
           line[x] = argb(255, color->Red, color->Green, color->Blue);
       }
       px = (char*)px + info->stride*inc;
@@ -183,7 +184,8 @@ void drawFrame(GifFileType* gif, AndroidBitmapInfo*  info, int* pixels, int fram
           continue;
         }
         color = (ext && frame->RasterBits[loc] == trans_index(ext)) ? bg : &colorMap->Colors[frame->RasterBits[loc]];
-        line[x] = argb(255, color->Red, color->Green, color->Blue);
+        if (color)
+        	line[x] = argb(255, color->Red, color->Green, color->Blue);
       }
       px = (char*)px + info->stride;
     }

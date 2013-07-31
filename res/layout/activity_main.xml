@@ -48,6 +48,20 @@
             android:layout_height="wrap_content"
             android:tag="four.gif"
             android:text="Four" />
+        
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="five.gif"
+            android:text="Five" />
+        
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="six.gif"
+            android:text="Six" />
 
     </LinearLayout>
 
